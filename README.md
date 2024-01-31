@@ -3,3 +3,6 @@
 
 # Running the crawler
 `scrapy crawl freeimages -a keyword=dogs`
+
+# Running tests
+pytest --reactor=asyncio .

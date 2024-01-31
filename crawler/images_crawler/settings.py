@@ -65,9 +65,9 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'scrapy.pipelines.images.ImagesPipeline': 1,
-    "scrapy.pipelines.files.FilesPipeline": 2
-#    "images_crawler.pipelines.ImagesCrawlerPipeline": 300,
+    'images_crawler.pipelines.DownloadLimiterPipeline': 1,
+    'scrapy.pipelines.images.ImagesPipeline': 100,
+    'images_crawler.pipelines.SQLAlchemyPipeline': 300,
 }
 
 # Specify the directory for storing downloaded images
@@ -101,4 +101,7 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
 
-MAX_DOWNLOADS = 4
+
+# Project config
+MAX_DOWNLOADS = 1000
+DATABASE_URL = 'sqlite:///database.db'

@@ -9,3 +9,6 @@ __pycache__
 .vscode
 # PyCharm gitignore files
 .idea
+
+*.db
+*.sqlite3

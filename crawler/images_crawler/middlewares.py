@@ -9,11 +9,11 @@ from scrapy import signals, exceptions
 from itemadapter import is_item, ItemAdapter
 
 
+
 class ImagesCrawlerSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
-
     @classmethod
     def from_crawler(cls, crawler):
         # This method is used by Scrapy to create your spiders.
@@ -27,7 +27,7 @@ class ImagesCrawlerSpiderMiddleware:
 
         # Should return None or raise an exception.
         MAX_DOWNLOADS = spider.settings.attributes["MAX_DOWNLOADS"].value
-        downloads = spider.crawler.stats.get_value('file_status_count/downloaded')
+        downloads = spider.crawler.stats.get_value('file_count')
         if (downloads is not None and downloads >= MAX_DOWNLOADS):
             raise exceptions.CloseSpider(f'More than {MAX_DOWNLOADS} items were downloaded the spider was suspended to avoid banning')
         return None
