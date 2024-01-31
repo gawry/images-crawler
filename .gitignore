@@ -1,0 +1,11 @@
+# Python gitignore files
+*.pyc
+.DS_Store
+.pytest_cache
+__pycache__
+# Jupyter Notebook gitignore files
+.ipynb_checkpoints
+# Visual Studio Code gitignore files
+.vscode
+# PyCharm gitignore files
+.idea
