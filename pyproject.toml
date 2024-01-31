@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "baires-scraper"
+version = "0.1.0"
+description = ""
+authors = ["Gustavo Gawryszewski <318831+gawry@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Scrapy = "^2.11.0"
+pillow = "^10.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-twisted = "^1.14.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tools.pytest.ini_options]
+markers = [
+    "webtest: mark a test as a webtest",
+    "other",
+]
