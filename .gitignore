@@ -3,6 +3,7 @@
 .DS_Store
 .pytest_cache
 __pycache__
+__pycache__/*
 # Jupyter Notebook gitignore files
 .ipynb_checkpoints
 # Visual Studio Code gitignore files
